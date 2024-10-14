@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'jwt'
+require "jwt"
 
 module JwtHelper
   SECRET_KEY = Rails.application.credentials.secret_key_base
