@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "pages#home"
 
+  get "*path", to: "pages#home", via: :all
+
   namespace :api do
     namespace :v1 do
       devise_for :users

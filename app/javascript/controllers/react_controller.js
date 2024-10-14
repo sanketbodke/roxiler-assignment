@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import React from "react";
 import ReactDom from "react-dom"
-import App from './App'
+import App from '../App'
 
 // Connects to data-controller="react"
 export default class extends Controller {
