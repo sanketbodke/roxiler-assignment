@@ -24,6 +24,9 @@ Rails.application.routes.draw do
           get "non_admin_users"
         end
       end
+      resources :stores do
+        resources :ratings, only: [ :create, :index ]
+      end
     end
   end
 
