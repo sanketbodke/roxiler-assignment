@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, CreateUserContainer, FormContainer, FormFiled, FormGroup, Input, Label, Select} from "../../../style/form.styled";
 import useCreate from "./useCreate";
-import FormHeading from "../../../components/FormHeading/FormHeading.component";
+import SectionHeading from "../../../components/SectionHeading/SectionHeading.component";
 function Create() {
     const {
         newUser,
@@ -13,7 +13,7 @@ function Create() {
     return (
         <CreateUserContainer>
             <FormContainer onSubmit={handleFormSubmit}>
-                <FormHeading
+                <SectionHeading
                     heading="Create User"
                 />
                 <FormGroup>

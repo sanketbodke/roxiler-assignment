@@ -32,6 +32,14 @@ const useHome = () => {
         }
     };
 
+    const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
+
+    const data = [
+        { name: 'Total Users', value: count.total_users },
+        { name: 'Total Stores', value: count.total_stores },
+        { name: 'Total Ratings', value: count.total_ratings },
+    ];
+
     useEffect(() => {
         handleCount();
     }, []);
@@ -39,7 +47,9 @@ const useHome = () => {
     return {
         count,
         loading,
-        error
+        error,
+        COLORS,
+        data
     }
 }
 

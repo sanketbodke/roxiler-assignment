@@ -1,7 +1,7 @@
 import React from 'react';
-import {FormHeadingContainer} from "./FormHeading.styled";
+import {FormHeadingContainer} from "./SectionHeading.styled";
 
-function FormHeading({heading}) {
+function SectionHeading({heading}) {
     return (
         <FormHeadingContainer>
             {heading}
@@ -9,4 +9,4 @@ function FormHeading({heading}) {
     );
 }
 
-export default FormHeading;
+export default SectionHeading;
