@@ -1,10 +1,19 @@
 module Api
   module V1
     class StoresController < BaseController
-      before_action :set_store, only: [:show, :update, :destroy]
+      before_action :set_store, only: [ :show, :update, :destroy ]
 
       def index
-        stores = Store.all.includes(:user)
+        stores = Store.includes(:user)
+
+        if params[:name].present?
+          stores = stores.where("stores.name ILIKE ?", "%#{params[:name]}%")
+        end
+
+        if params[:address].present?
+          stores = stores.where("stores.address ILIKE ?", "%#{params[:address]}%")
+        end
+
         render json: stores, include: :user
       end
 

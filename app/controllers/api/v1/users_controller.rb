@@ -1,15 +1,24 @@
 module Api
   module V1
     class UsersController < BaseController
-      before_action :set_user, only: [:show, :update, :destroy]
+      before_action :set_user, only: [ :show, :update, :destroy ]
 
       def index
         @users = User.includes(:roles).all
-        render json: @users.as_json(include: { roles: { only: [:name] } })
+
+        if params[:email].present?
+          @users = @users.where(email: params[:email])
+        end
+
+        if params[:role].present?
+          @users = @users.joins(:roles).where(roles: { name: params[:role] })
+        end
+
+        render json: @users.as_json(include: { roles: { only: [ :name ] } })
       end
 
       def show
-        render json: @user.as_json(include: { roles: { only: [:name] } })
+        render json: @user.as_json(include: { roles: { only: [ :name ] } })
       end
 
       def create
@@ -17,7 +26,7 @@ module Api
 
         if user.save
           user.add_role(params[:role]) if params[:role].present?  # Assign role if provided
-          render json: { message: "User created successfully", user: user.as_json(include: { roles: { only: [:name] } }) }, status: :created
+          render json: { message: "User created successfully", user: user.as_json(include: { roles: { only: [ :name ] } }) }, status: :created
         else
           render json: { status: "error", message: user.errors.full_messages }, status: :unprocessable_entity
         end
