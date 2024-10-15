@@ -21,6 +21,7 @@ Rails.application.routes.draw do
         member do
           post "create_user"
           post "create_store"
+          get "non_admin_users"
         end
       end
     end

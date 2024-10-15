@@ -4,7 +4,7 @@ import {FooterContainer} from "./Footer.styled";
 function Footer() {
     return (
         <FooterContainer>
-            2024 © All Rights Reserved
+            <p>2024 © All Rights Reserved</p>
         </FooterContainer>
     );
 }

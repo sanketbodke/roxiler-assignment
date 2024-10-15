@@ -5,6 +5,8 @@ import Login from "../pages/auth/form/login/login";
 import Register from "../pages/auth/form/register/register";
 import PrivateRoutes from "./PrivateRoutes";
 import Home from "../pages/home/home";
+import CreateUser from "../pages/user/create/create";
+import CreateStore from "../pages/store/create/create";
 
 function AppRoutes() {
     return(
@@ -16,6 +18,8 @@ function AppRoutes() {
 
             <Route element={<PrivateRoutes />}>
                 <Route path="/" index element={<Home />} />
+                <Route path="/user/create" element={<CreateUser />}/>
+                <Route path="/store/create" element={<CreateStore />}/>
             </Route>
         </Routes>
     )

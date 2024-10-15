@@ -8,3 +8,10 @@ export const SidebarContainer = styled.aside`
     padding: 15px;
     border-radius: 10px;
 `
+
+export const SidebarItems = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 16px;
+`

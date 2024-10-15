@@ -33,6 +33,12 @@ module Api
         end
       end
 
+      def non_admin_users
+        non_admins = User.where.not(id: User.with_role(:admin).pluck(:id))
+
+        render json: { users: non_admins }, status: :ok
+      end
+
       private
 
       def user_params
