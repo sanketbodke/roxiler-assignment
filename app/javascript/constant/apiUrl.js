@@ -6,7 +6,9 @@ export const apiUrls = {
     count: `${baseUrl}/api/v1/admin`,
     createUser: `${baseUrl}/api/v1/users`,
     createStore: `${baseUrl}/api/v1/stores`,
-    nonAdminUsers: `${baseUrl}/api/v1/users/:id/non_admin_users`
+    nonAdminUsers: `${baseUrl}/api/v1/users/:id/non_admin_users`,
+    listUsers: `${baseUrl}/api/v1/users`,
+    listStores: `${baseUrl}/api/v1/stores`
 };
 
 export default apiUrls;

@@ -7,6 +7,8 @@ import PrivateRoutes from "./PrivateRoutes";
 import Home from "../pages/home/home";
 import CreateUser from "../pages/user/create/create";
 import CreateStore from "../pages/store/create/create";
+import ListUsers from "../pages/user/list/list";
+import ListStores from "../pages/store/list/list";
 
 function AppRoutes() {
     return(
@@ -18,8 +20,10 @@ function AppRoutes() {
 
             <Route element={<PrivateRoutes />}>
                 <Route path="/" index element={<Home />} />
-                <Route path="/user/create" element={<CreateUser />}/>
-                <Route path="/store/create" element={<CreateStore />}/>
+                <Route path="/users/create" element={<CreateUser />}/>
+                <Route path="/users/all" element={<ListUsers />}/>
+                <Route path="/stores/all" element={<ListStores />}/>
+                <Route path="/stores/create" element={<CreateStore />}/>
             </Route>
         </Routes>
     )
