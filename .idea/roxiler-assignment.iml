@@ -85,6 +85,7 @@
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.5.10, chruby: ruby-3.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, chruby: ruby-3.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.3.8, chruby: ruby-3.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rolify (v6.0.1, chruby: ruby-3.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, chruby: ruby-3.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, chruby: ruby-3.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.3.1, chruby: ruby-3.2.1) [gem]" level="application" />

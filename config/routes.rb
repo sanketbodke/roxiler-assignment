@@ -14,11 +14,17 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "pages#home"
 
-  get "*path", to: "pages#home", via: :all
-
   namespace :api do
     namespace :v1 do
       devise_for :users
+      resources :admin, only: [ :index ] do
+        member do
+          post "create_user"
+          post "create_store"
+        end
+      end
     end
   end
+
+  get "*path", to: "pages#home", via: :all
 end
