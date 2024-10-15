@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
+import styled from "styled-components";
 export const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
@@ -19,3 +19,16 @@ export const GlobalStyle = createGlobalStyle`
     }
     
 `;
+
+export const Container = styled.div`
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+`
+
+export const Layout = styled.div`
+    display: flex;
+    padding: 30px 15px;
+    background-color: #F7F7F7;
+    gap: 20px;
+`
