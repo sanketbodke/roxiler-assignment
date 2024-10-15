@@ -19,7 +19,7 @@ const useCreate = () => {
 
     const handleGetUsers = async () => {
         try {
-            const response = await axios.get(`${apiUrl.nonAdminUsers.replace(':id', id)}`, {
+            const response = await axios.get(`${apiUrl.nonAdminUsers}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

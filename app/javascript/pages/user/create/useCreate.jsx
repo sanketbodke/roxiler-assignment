@@ -46,7 +46,7 @@ const useCreate = () => {
         };
 
         try {
-            const response = await axios.post(`${apiUrl.createUser.replace(':id', id)}`, payload, {
+            const response = await axios.post(`${apiUrl.createUser}`, payload, {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`
