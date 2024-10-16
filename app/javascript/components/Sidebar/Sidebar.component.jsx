@@ -3,7 +3,7 @@ import { SidebarContainer, SidebarItems, SidebarLink } from "./sidebar.styled";
 import useSidebar from "./useSidebar";
 
 function Sidebar() {
-    const { activeTab, handleTabClick } = useSidebar();
+    const { activeTab, handleTabClick , handleLogout} = useSidebar();
 
     return (
         <SidebarContainer>
@@ -31,7 +31,7 @@ function Sidebar() {
                 </SidebarLink>
                 <SidebarLink
                     to="/"
-                    onClick={() => handleTabClick('/')}
+                    onClick={() => handleLogout()}
                     className={activeTab === '/logout' ? 'active' : ''}
                 >
                     Logout

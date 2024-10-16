@@ -7,9 +7,16 @@ const useSidebar = () => {
         setActiveTab(tab);
     };
 
+    const handleLogout = () => {
+        Cookies.remove('access_token');
+        localStorage.removeItem('persist:root');
+        window.location.reload();
+    };
+
     return {
         activeTab,
         handleTabClick,
+        handleLogout
     };
 };
 
