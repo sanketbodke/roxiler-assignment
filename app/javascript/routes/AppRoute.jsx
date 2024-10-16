@@ -12,6 +12,7 @@ import ListStores from "../pages/store/list/list";
 import Profile from "../pages/profile/profile";
 import UserRatings from "../pages/rating/userRatings/userRatings";
 import CreateRating from "../pages/rating/create/create";
+import ListOwnerStores from "../pages/owner/listStores/listStores";
 
 function AppRoutes() {
     return(
@@ -30,6 +31,7 @@ function AppRoutes() {
                 <Route path="/user/profile" element={<Profile />}/>
                 <Route path="/stores/ratings" element={<UserRatings />} />
                 <Route path="/stores/ratings/add" element={<CreateRating />} />
+                <Route path="/owner/stores" element={<ListOwnerStores />} />
             </Route>
         </Routes>
     )

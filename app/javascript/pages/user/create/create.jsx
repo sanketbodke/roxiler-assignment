@@ -34,6 +34,7 @@ function Create() {
                         <option value="" disabled selected>Select Role</option>
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
+                        <option value="owner">Owner</option>
                     </Select>
                 </FormFiled>
 

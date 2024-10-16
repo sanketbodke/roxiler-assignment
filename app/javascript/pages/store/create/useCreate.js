@@ -21,13 +21,13 @@ const useCreate = () => {
 
     const handleGetUsers = async () => {
         try {
-            const response = await axios.get(`${apiUrl.nonAdminUsers}`, {
+            const response = await axios.get(`${apiUrl.owners}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
 
-            setNonAdminUsers(response.data?.users);
+            setNonAdminUsers(response.data);
         } catch (error) {
             console.error('Error fetching users:', error);
             message.error('Failed to fetch users.');

@@ -12,7 +12,9 @@ export const apiUrls = {
     verify_otp: `${baseUrl}/api/v1/users/:id/verify_otp`,
     update_password: `${baseUrl}/api/v1/users/:id/update_password`,
     delete_account: `${baseUrl}/api/v1/users/:id`,
-    add_rating: `${baseUrl}/api/v1/stores/:id/ratings`
+    add_rating: `${baseUrl}/api/v1/stores/:id/ratings`,
+    owners: `${baseUrl}/api/v1/owners`,
+    listOwnersStore: `${baseUrl}/api/v1/owners/:id`
 };
 
 export default apiUrls;

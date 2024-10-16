@@ -8,19 +8,21 @@ function Sidebar() {
     const { user } = currentUser();
     const roles = user.data.role;
 
+    const isOwnerRole = roles.includes('owner');
     const isUserRole = roles.includes('user') || roles.includes('newuser');
+    const isAdminRole = roles.includes('admin');
 
     return (
         <SidebarContainer>
             <SidebarItems>
-                {isUserRole ? (
+                {isOwnerRole && (
                     <>
                         <SidebarLink
-                            to="/stores/ratings"
-                            onClick={() => handleTabClick('/stores/ratings')}
-                            className={activeTab === '/stores/ratings' ? 'active' : ''}
+                            to="/owner/stores"
+                            onClick={() => handleTabClick('/owner/stores')}
+                            className={activeTab === '/owner/stores' ? 'active' : ''}
                         >
-                            Store Ratings
+                            My Stores
                         </SidebarLink>
                         <SidebarLink
                             to="/"
@@ -30,7 +32,9 @@ function Sidebar() {
                             Logout
                         </SidebarLink>
                     </>
-                ) : (
+                )}
+
+                {isAdminRole && (
                     <>
                         <SidebarLink
                             to="/"
@@ -38,6 +42,14 @@ function Sidebar() {
                             className={activeTab === '/' ? 'active' : ''}
                         >
                             Home
+                        </SidebarLink>
+
+                        <SidebarLink
+                            to="/stores/all"
+                            onClick={() => handleTabClick('/stores/all')}
+                            className={activeTab === '/stores/all' ? 'active' : ''}
+                        >
+                            Stores
                         </SidebarLink>
 
                         <SidebarLink
@@ -49,13 +61,24 @@ function Sidebar() {
                         </SidebarLink>
 
                         <SidebarLink
-                            to="/stores/all"
-                            onClick={() => handleTabClick('/stores/all')}
-                            className={activeTab === '/stores/all' ? 'active' : ''}
+                            to="/"
+                            onClick={() => handleLogout()}
+                            className={activeTab === '/logout' ? 'active' : ''}
                         >
-                            Stores
+                            Logout
                         </SidebarLink>
+                    </>
+                )}
 
+                {isUserRole && (
+                    <>
+                        <SidebarLink
+                            to="/stores/ratings"
+                            onClick={() => handleTabClick('/stores/ratings')}
+                            className={activeTab === '/stores/ratings' ? 'active' : ''}
+                        >
+                            Store Ratings
+                        </SidebarLink>
                         <SidebarLink
                             to="/"
                             onClick={() => handleLogout()}
