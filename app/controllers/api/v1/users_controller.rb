@@ -42,7 +42,7 @@ module Api
         otp_code = generate_otp_code
         @current_user.update(otp_code:, otp_generated_at: Time.current)
         UserMailer.otp(@current_user, otp_code).deliver_now
-        render json: { message: 'OTP has been sent to your email.' }, status: :ok
+        render json: { message: "OTP has been sent to your email." }, status: :ok
       end
 
       def update_password
@@ -50,14 +50,14 @@ module Api
           user_service = UserService.new(@current_user)
           result = user_service.update_password(params[:current_password], params[:new_password], params[:password_confirmation])
 
-          if result == 'Password updated successfully'
+          if result == "Password updated successfully"
             @current_user.update(otp_code: nil, otp_generated_at: nil)
             render json: { message: result }, status: :ok
           else
             render json: { error: result }, status: :unprocessable_entity
           end
         else
-          render json: { error: 'Invalid or expired OTP' }, status: :unprocessable_entity
+          render json: { error: "Invalid or expired OTP" }, status: :unprocessable_entity
         end
       end
       def destroy
