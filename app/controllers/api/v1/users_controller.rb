@@ -5,15 +5,12 @@ module Api
 
       def index
         @users = User.includes(:roles).all
-
         if params[:email].present?
           @users = @users.where(email: params[:email])
         end
-
         if params[:role].present?
           @users = @users.joins(:roles).where(roles: { name: params[:role] })
         end
-
         render json: @users.as_json(include: { roles: { only: [ :name ] } })
       end
 
