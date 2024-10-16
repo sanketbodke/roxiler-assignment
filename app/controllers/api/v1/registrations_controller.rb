@@ -6,6 +6,7 @@ module Api
       def create
         user = User.new(user_params)
         if user.save
+          user.add_role(:user)
           render json: { status: "success", message: "User created successfully." }, status: :created
         else
           render json: { status: "error", message: user.errors.full_messages }, status: :unprocessable_entity

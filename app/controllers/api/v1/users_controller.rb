@@ -22,7 +22,7 @@ module Api
         user = User.new(user_params)
 
         if user.save
-          user.add_role(params[:role]) if params[:role].present?  # Assign role if provided
+          user.add_role(params[:role]) if params[:role].present?
           render json: { message: "User created successfully", user: user.as_json(include: { roles: { only: [ :name ] } }) }, status: :created
         else
           render json: { status: "error", message: user.errors.full_messages }, status: :unprocessable_entity
