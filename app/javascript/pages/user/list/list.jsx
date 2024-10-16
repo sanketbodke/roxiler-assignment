@@ -30,7 +30,7 @@ function List() {
                 />
                 <Link to="/users/create" style={{ color: '#ffffff' }}>
                     <AddNewButton>
-                        Add New
+                        Add User
                     </AddNewButton>
                 </Link>
             </SearchAndAddButton>

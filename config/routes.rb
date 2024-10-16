@@ -24,6 +24,8 @@ Rails.application.routes.draw do
       resources :users do
         member do
           get "non_admin_users"
+          put :update_password
+          put :verify_otp
         end
       end
       resources :stores
