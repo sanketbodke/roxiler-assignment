@@ -16,7 +16,7 @@ function Sidebar() {
                 {isUserRole ? (
                     <>
                         <SidebarLink
-                            to="/stores/all"
+                            to="/stores/ratings"
                             onClick={() => handleTabClick('/stores/ratings')}
                             className={activeTab === '/stores/ratings' ? 'active' : ''}
                         >

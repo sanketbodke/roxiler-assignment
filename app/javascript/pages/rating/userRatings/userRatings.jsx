@@ -3,6 +3,7 @@ import { UserRatingsContainer, SearchAndAddButton, SearchInput, AddNewButton, St
 import apiUrl from '../../../constant/apiUrl';
 import axios from 'axios';
 import currentUser from '../../../utils/currentUser';
+import {Link} from "react-router-dom";
 
 function UserRatings() {
     const { user } = currentUser();
@@ -24,9 +25,9 @@ function UserRatings() {
     };
 
     const calculateAverageRating = (ratings) => {
-        if (ratings.length === 0) return 0; // Return 0 if there are no ratings
+        if (ratings.length === 0) return 0;
         const totalScore = ratings.reduce((acc, rating) => acc + rating.score, 0);
-        return (totalScore / ratings.length).toFixed(2); // Return the average rounded to 2 decimal places
+        return (totalScore / ratings.length).toFixed(2);
     };
 
     useEffect(() => {
@@ -37,7 +38,10 @@ function UserRatings() {
         <UserRatingsContainer>
             <SearchAndAddButton>
                 <SearchInput placeholder="Search..." />
-                <AddNewButton>Add New</AddNewButton>
+                <Link
+                    to="/stores/ratings/add">
+                    <AddNewButton>Add New</AddNewButton>
+                </Link>
             </SearchAndAddButton>
             <StyledTable>
                 <thead>
