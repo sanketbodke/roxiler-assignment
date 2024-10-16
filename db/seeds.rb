@@ -11,3 +11,7 @@
 
 user = User.create(email: 'admin@example.com', password: 'admin1234')
 user.add_role(:admin)
+
+
+user = User.create(email: 'user@example.com', password: 'admin1234')
+user.add_role(:user)

@@ -11,10 +11,7 @@ const useCreate = () => {
     const token = user.data.token;
 
     const [newUser, setNewUser] = useState({
-        name: '',
         email: '',
-        password: '',
-        password_confirmation: '',
         role: ''
     });
 
@@ -39,16 +36,13 @@ const useCreate = () => {
 
         const payload = {
             user: {
-                name: newUser.name,
                 email: newUser.email,
-                password: newUser.password,
-                password_confirmation: newUser.password_confirmation
             },
             role: newUser.role
         };
 
         try {
-            const response = await axios.post(`${apiUrl.createUser}`, payload, {
+            const response = await axios.post(`${apiUrl.createUser.replace(":id", id)}`, payload, {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`

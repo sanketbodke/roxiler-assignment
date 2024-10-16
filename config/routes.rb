@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       devise_for :users
-      resources :admin, only: [ :index ]
+      resources :admin, only: [ :index ] do
+        member do
+          post :create_user
+        end
+      end
       resources :stores do
         resources :ratings, only: [ :create, :index ]
       end

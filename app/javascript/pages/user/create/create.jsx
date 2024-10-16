@@ -18,43 +18,11 @@ function Create() {
                 />
                 <FormGroup>
                     <FormFiled>
-                        <Label htmlFor="name">Name</Label>
-                        <Input
-                            type="text"
-                            name="name"
-                            value={newUser.name}
-                            onChange={handleInputChange}
-                        />
-                    </FormFiled>
-
-                    <FormFiled>
                         <Label htmlFor="email">Email</Label>
                         <Input
                             type="email"
                             name="email"
                             value={newUser.email}
-                            onChange={handleInputChange}
-                        />
-                    </FormFiled>
-                </FormGroup>
-
-                <FormGroup>
-                    <FormFiled>
-                        <Label htmlFor="password">Password</Label>
-                        <Input
-                            type="password"
-                            name="password"
-                            value={newUser.password}
-                            onChange={handleInputChange}
-                        />
-                    </FormFiled>
-
-                    <FormFiled>
-                        <Label htmlFor="password_confirmation">Password Confirmation</Label>
-                        <Input
-                            type="password"
-                            name="password_confirmation"
-                            value={newUser.password_confirmation}
                             onChange={handleInputChange}
                         />
                     </FormFiled>

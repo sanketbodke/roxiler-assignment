@@ -4,4 +4,10 @@ class UserMailer < ApplicationMailer
     @otp_code = otp_code
     mail(to: @user.email, subject: "Your OTP Code")
   end
+
+  def profile_create(email, password)
+    @email = email
+    @password = password
+    mail(to: @email, subject: "Profile Created")
+  end
 end

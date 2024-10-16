@@ -18,17 +18,6 @@ module Api
         render json: @user.as_json(include: { roles: { only: [ :name ] } })
       end
 
-      def create
-        user = User.new(user_params)
-
-        if user.save
-          user.add_role(params[:role]) if params[:role].present?
-          render json: { message: "User created successfully", user: user.as_json(include: { roles: { only: [ :name ] } }) }, status: :created
-        else
-          render json: { status: "error", message: user.errors.full_messages }, status: :unprocessable_entity
-        end
-      end
-
       def non_admin_users
         non_admins = User.where.not(id: User.with_role(:admin).pluck(:id))
 
@@ -66,10 +55,6 @@ module Api
 
       def set_user
         @user = User.find(params[:id])
-      end
-
-      def user_params
-        params.require(:user).permit(:email, :password, :password_confirmation)
       end
 
       def generate_otp_code
