@@ -14,7 +14,7 @@ module Api
           stores = stores.where("stores.address ILIKE ?", "%#{params[:address]}%")
         end
 
-        render json: stores, include: :user
+        render json: stores.as_json(include: { user: {}, ratings: { include: :user } })
       end
 
       def create

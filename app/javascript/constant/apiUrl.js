@@ -11,7 +11,8 @@ export const apiUrls = {
     listStores: `${baseUrl}/api/v1/stores`,
     verify_otp: `${baseUrl}/api/v1/users/:id/verify_otp`,
     update_password: `${baseUrl}/api/v1/users/:id/update_password`,
-    delete_account: `${baseUrl}/api/v1/users/:id`
+    delete_account: `${baseUrl}/api/v1/users/:id`,
+    add_rating: `${baseUrl}/api/v1/stores/:id/ratings`
 };
 
 export default apiUrls;

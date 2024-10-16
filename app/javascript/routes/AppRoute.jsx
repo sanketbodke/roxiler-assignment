@@ -10,6 +10,8 @@ import CreateStore from "../pages/store/create/create";
 import ListUsers from "../pages/user/list/list";
 import ListStores from "../pages/store/list/list";
 import Profile from "../pages/profile/profile";
+import UserRatings from "../pages/rating/userRatings/userRatings";
+import CreateRating from "../pages/rating/create/create";
 
 function AppRoutes() {
     return(
@@ -26,6 +28,8 @@ function AppRoutes() {
                 <Route path="/stores/all" element={<ListStores />}/>
                 <Route path="/stores/create" element={<CreateStore />}/>
                 <Route path="/user/profile" element={<Profile />}/>
+                <Route path="/stores/ratings" element={<UserRatings />} />
+                <Route path="/stores/ratings/add" element={<CreateRating />} />
             </Route>
         </Routes>
     )
