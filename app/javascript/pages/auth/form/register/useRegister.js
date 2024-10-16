@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { apiUrls } from "../../../../constant/apiUrl";
 import { message } from 'antd';
+import {useNavigate} from "react-router-dom";
 
 const useRegister = () => {
+    const navigateTo = useNavigate()
     const [user, setUser] = useState({
         email: "",
         password: "",
@@ -29,6 +31,7 @@ const useRegister = () => {
 
             if (response.data) {
                 message.success("Registration successful!");
+                navigateTo("/auth/login")
                 console.log(response.data);
             }
         } catch (error) {

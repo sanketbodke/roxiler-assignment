@@ -3,7 +3,9 @@ import {useState} from "react";
 import axios from "axios";
 import apiUrl from "../../../constant/apiUrl";
 import {message} from "antd";
+import {useNavigate} from "react-router-dom";
 const useCreate = () => {
+    const navigateTo = useNavigate()
     const { user } = currentUser();
     const id = user.data.user.id;
     const token = user.data.token;
@@ -53,6 +55,7 @@ const useCreate = () => {
                 }
             });
 
+            navigateTo("/users/all")
             message.success('User created successfully!');
             console.log('User created successfully:', response.data);
         } catch (error) {

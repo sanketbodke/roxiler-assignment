@@ -3,8 +3,10 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import apiUrl from "../../../constant/apiUrl";
 import {message} from "antd";
+import {useNavigate} from "react-router-dom";
 
 const useCreateRating = () => {
+    const navigateTo = useNavigate()
     const { user } = currentUser();
     const token = user.data.token;
 
@@ -41,6 +43,7 @@ const useCreateRating = () => {
             setSelectedStoreId('');
             setScore(1);
             message.success('Rating added');
+            navigateTo("/stores/ratings")
         } catch (error) {
             console.error("Error adding rating:", error);
             message.error(error);
