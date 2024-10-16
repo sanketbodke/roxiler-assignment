@@ -1,24 +1,43 @@
-# README
+#### About
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Prerequisites
 
-Things you may want to cover:
+The setups steps expect following tools installed on the system.
 
-* Ruby version
+- Github
+- Ruby [3.3.0]()
+- Rails [7.2.1]()
 
-* System dependencies
+##### 1. Check out the repository
 
-* Configuration
+```bash
+git clone git@github.com:sanketbodke/roxiler-assignment.git
+```
 
-* Database creation
+##### 2. Setup database.yml file
 
-* Database initialization
+Set your postgres username and password
 
-* How to run the test suite
+##### 3. Create and setup the database
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the following commands to create and setup the database.
 
-* Deployment instructions
+```ruby
+rails db:create && rails db:migrate
+```
 
-* ...
+##### 5. Start the Rails server
+
+You can start the rails server using the command given below.
+
+```ruby
+forman start Procfile.dev
+```
+
+
+```
+rails db:drop
+rails db:create
+rails db:migrate
+rails db:seed
+```
