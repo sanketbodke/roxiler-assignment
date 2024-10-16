@@ -9,6 +9,7 @@ import CreateUser from "../pages/user/create/create";
 import CreateStore from "../pages/store/create/create";
 import ListUsers from "../pages/user/list/list";
 import ListStores from "../pages/store/list/list";
+import Profile from "../pages/profile/profile";
 
 function AppRoutes() {
     return(
@@ -24,6 +25,7 @@ function AppRoutes() {
                 <Route path="/users/all" element={<ListUsers />}/>
                 <Route path="/stores/all" element={<ListStores />}/>
                 <Route path="/stores/create" element={<CreateStore />}/>
+                <Route path="/user/profile" element={<Profile />}/>
             </Route>
         </Routes>
     )
