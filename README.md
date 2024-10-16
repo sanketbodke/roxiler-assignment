@@ -1,5 +1,10 @@
 #### About
 
+#### DB Design
+<img width="1440" alt="Screenshot 2024-10-16 at 3 20 50 PM" src="https://github.com/user-attachments/assets/77abb975-1a74-4741-b60f-280b584736f7">
+
+
+
 ##### Prerequisites
 
 The setups steps expect following tools installed on the system.
